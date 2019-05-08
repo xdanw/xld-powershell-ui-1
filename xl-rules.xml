@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<rules xmlns="http://www.xebialabs.com/xl-deploy/xl-rules">
+    
+    <!-- Powershell -->
+    <rule name="script.DeployedPowershellScript.CREATE" scope="deployed">
+      <conditions>
+        <type>script.DeployedPowershellScript</type>
+        <operation>CREATE</operation>
+      </conditions>
+      <steps>
+        <powershell>
+          <!-- also tried deploy.file, deployed.fileUri -->
+          <script>deployed.file.name</script>
+          <order>70</order>
+        </powershell>
+      </steps>
+    </rule>
+    
+</rules>
